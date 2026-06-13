@@ -394,7 +394,6 @@ const axMap={X:'干渉',N:'受信',L:'科学',O:'霊的',R:'畏怖',K:'親和',B
   const axChars=code.split('');
   const axHtml=axChars.map(c=>'<div class="ax"><span class="l">'+c+'</span><span class="w">'+axMap[c]+'</span><span class="ax-en">'+AX_EN[c]+'</span></div>').join('');
   const catchHtml=(d.catch||[]).map(c=>'<span>'+c+'</span>').join('');
-  h+='<div class="potential-notice" style="margin:18px auto 6px;max-width:560px;padding:14px 16px;border-top:1px solid rgba(201,162,39,.35);border-bottom:1px solid rgba(201,162,39,.35);color:#b9b29f;font-size:.78rem;line-height:1.9;letter-spacing:.05em;text-align:center;">ここに記されているのは、あなたの内に眠る<strong style=\"color:#cdbd7a;\">霊能力の原型</strong>です。<br>すべてに思い当たる必要はありません。まだ目覚めていない力も含めて——<br>それが、あなたという器の設計図です。</div>';
   h+='<section class="sec type reveal"><div class="type-pre">あなたのタイプは</div>'+
      '<div class="type-card big"><img src="'+img+'" alt="'+d.name+'"></div>'+
      '<h1>'+d.name+'</h1><div class="code">'+code+'</div>'+
@@ -416,6 +415,7 @@ const axMap={X:'干渉',N:'受信',L:'科学',O:'霊的',R:'畏怖',K:'親和',B
       '<p class="ghost-desc">'+sp.bad_desc+'</p></div>'+
       '</div></div>';
   }
+  h+='<div class="potential-notice" style="margin:18px auto 6px;max-width:560px;padding:14px 16px;border-top:1px solid rgba(201,162,39,.35);border-bottom:1px solid rgba(201,162,39,.35);color:#b9b29f;font-size:.78rem;line-height:1.9;letter-spacing:.05em;text-align:center;">ここに記されているのは、あなたの内に眠る<strong style=\"color:#cdbd7a;\">霊能力の原型</strong>です。<br>すべてに思い当たる必要はありません。まだ目覚めていない力も含めて——<br>それが、あなたという器の設計図です。</div>';
   h+='<div class="rsec"><h2>あなたという人</h2>'+d.profile.map(p=>'<p>'+p+'</p>').join('')+'</div>';
   h+='<div class="rsec"><h2>霊的日常の観測ログ</h2>'+d.logs.map(l=>'<div class="log"><div class="t">「'+l[0]+'」</div><div class="d">'+l[1]+'</div></div>').join('')+'</div>';
   h+='<div class="rsec"><h2>あなたの強み</h2>'+d.strengths.map(s=>'<div class="card"><div class="t">'+s[0]+'</div><div class="d">'+s[1]+'</div></div>').join('')+'</div>';
