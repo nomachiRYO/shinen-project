@@ -146,7 +146,7 @@ body{font-family:'Noto Serif JP','Noto Serif CJK JP',serif;color:#e8e0f0;--p:0;
 .rcatch span{display:block;font-size:15px;color:#c8b0e0;font-style:italic;}
 .rname{font-size:34px;color:#fff;text-shadow:0 0 30px rgba(184,157,214,.5);margin:10px 0 4px;}
 .rcode{font-size:12px;letter-spacing:.4em;color:#9a8ab0;}
-.axes{display:flex;justify-content:center;gap:10px;margin-top:34px;margin-bottom:20px;}
+.axes{display:flex;justify-content:center;gap:10px;margin-top:34px;margin-bottom:20px;width:100%;}
 .ax{background:rgba(125,91,166,.15);border:1px solid #5a3a7d;border-radius:10px;padding:10px 0;width:62px;}
 .ax .l{display:block;font-size:18px;color:#c8b0e0;}.ax .w{display:block;font-size:11px;color:#9a8ab0;margin-top:2px;}
 .rsec p{font-size:14px;line-height:2.05;margin-bottom:12px;}
@@ -186,7 +186,7 @@ body{font-family:'Noto Serif JP','Noto Serif CJK JP',serif;color:#e8e0f0;--p:0;
 .tags{font-size:11px;color:#9a8ab0;margin-top:13px;}
 .restart{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:20;font-size:12px;color:#9a8ab0;background:rgba(0,0,0,.5);border:1px solid #5a3a7d;padding:8px 18px;border-radius:18px;cursor:pointer;}
 
-.type-card{margin:18px auto 16px;max-width:300px;}
+.type{text-align:center;}.type-card{margin:18px auto 16px;max-width:300px;}
 .type-card img{width:100%;height:auto;border-radius:14px;box-shadow:0 10px 50px rgba(125,91,166,.6),0 0 0 1px rgba(184,157,214,.3);display:block;}
 .scoreabout{max-width:430px;margin:24px auto 0;text-align:left;}
 .scoreabout .sa-h{text-align:center;font-size:12px;letter-spacing:.2em;color:#c8b0e0;margin-bottom:13px;}
@@ -394,6 +394,7 @@ const axMap={X:'干渉',N:'受信',L:'科学',O:'霊的',R:'畏怖',K:'親和',B
   const axChars=code.split('');
   const axHtml=axChars.map(c=>'<div class="ax"><span class="l">'+c+'</span><span class="w">'+axMap[c]+'</span><span class="ax-en">'+AX_EN[c]+'</span></div>').join('');
   const catchHtml=(d.catch||[]).map(c=>'<span>'+c+'</span>').join('');
+  h+='<div class="potential-notice" style="margin:18px auto 6px;max-width:560px;padding:14px 16px;border-top:1px solid rgba(201,162,39,.35);border-bottom:1px solid rgba(201,162,39,.35);color:#b9b29f;font-size:.78rem;line-height:1.9;letter-spacing:.05em;text-align:center;">ここに記されているのは、あなたの内に眠る<strong style=\"color:#cdbd7a;\">霊能力の原型</strong>です。<br>すべてに思い当たる必要はありません。まだ目覚めていない力も含めて——<br>それが、あなたという器の設計図です。</div>';
   h+='<section class="sec type reveal"><div class="type-pre">あなたのタイプは</div>'+
      '<div class="type-card big"><img src="'+img+'" alt="'+d.name+'"></div>'+
      '<h1>'+d.name+'</h1><div class="code">'+code+'</div>'+
