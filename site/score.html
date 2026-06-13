@@ -1,0 +1,124 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>霊力スコア診断 ｜ 深淵の書</title><style>
+:root{--bg:#0d0916;--ink:#d8d3c8;--gold:#c9a227;--gold-soft:#cdbd7a;--muted:#8f8770;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--ink);font-family:"Hiragino Mincho ProN","Yu Mincho",serif;line-height:2;}
+.wrap{max-width:560px;margin:0 auto;padding:36px 18px 60px;}
+header{text-align:center;margin-bottom:26px;}
+.orn{color:var(--gold);letter-spacing:.6em;font-size:11px;}
+.badge{display:inline-block;color:var(--gold);border:1px solid rgba(201,162,39,.5);border-radius:999px;padding:6px 16px;font-size:11px;letter-spacing:.2em;background:rgba(201,162,39,.06);}
+h1{font-size:21px;letter-spacing:.25em;color:#e8d9a0;margin:10px 0 8px;font-weight:600;}
+.lead{color:var(--muted);font-size:12.5px;}
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px;}
+.tbtn{background:rgba(20,14,30,.7);border:1px solid rgba(201,162,39,.3);border-radius:10px;color:var(--ink);padding:12px 6px;font-family:inherit;font-size:13px;cursor:pointer;letter-spacing:.05em;}
+.tbtn span{display:block;color:var(--gold);font-size:10px;letter-spacing:.3em;margin-top:2px;}
+.tbtn:active{border-color:var(--gold);}
+#qbox{display:none;background:rgba(20,14,30,.6);border:1px solid rgba(201,162,39,.25);border-radius:12px;padding:22px 16px;margin-top:18px;}
+.qt{font-size:15px;color:#e8d9a0;margin-bottom:16px;line-height:2;}
+.opts{display:grid;gap:9px;}
+.opt{background:rgba(13,9,22,.7);border:1px solid rgba(125,91,166,.3);border-radius:8px;color:var(--ink);padding:12px;font-family:inherit;font-size:13.5px;cursor:pointer;}
+.opt:active{border-color:var(--gold);}
+.prog{text-align:center;color:var(--muted);font-size:11px;letter-spacing:.25em;margin-top:14px;}
+.qlabel{font-size:10px;color:var(--gold);letter-spacing:.3em;margin-bottom:8px;}
+#result{display:none;text-align:center;}
+.gauge{font-size:48px;color:#f0e3b0;margin:16px 0 2px;}
+.gauge small{font-size:16px;color:var(--gold);}
+.stage{color:var(--gold);letter-spacing:.3em;font-size:13.5px;margin-bottom:14px;}
+.rcard{font-size:14px;line-height:2.15;text-align:left;background:rgba(20,14,30,.6);border:1px solid rgba(201,162,39,.25);border-radius:12px;padding:18px 17px;margin:14px 0;}
+.rname{color:var(--gold-soft);font-size:12.5px;letter-spacing:.12em;display:block;text-align:center;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid rgba(201,162,39,.2);}
+.rdiv{margin:12px 0;border:none;border-top:1px dashed rgba(125,91,166,.3);}
+.cta{display:block;background:linear-gradient(135deg,#6b4fa0,#8d6cc4);color:#fff;text-decoration:none;border-radius:999px;padding:15px;margin-top:18px;font-size:14px;letter-spacing:.1em;box-shadow:0 6px 24px rgba(125,91,166,.5);}
+.thirst{text-align:center;margin:8px 0 4px;font-size:13.5px;line-height:2.15;color:var(--ink);}
+.thirst .t-lead{color:var(--gold-soft);font-size:14.5px;margin-bottom:10px;}
+.thirst p{margin-bottom:10px;}
+.thirst .t-close{color:#e8d9a0;font-size:15px;letter-spacing:.05em;margin-top:4px;}
+.thirst strong{color:#e8d9a0;}
+.change{margin:22px 0 4px;text-align:left;}
+.ch-h{text-align:center;color:var(--gold);letter-spacing:.18em;font-size:12.5px;margin-bottom:14px;}
+.ch-list{list-style:none;padding:0;margin:0 0 14px;}
+.ch-list li{font-size:13.5px;line-height:1.95;padding:10px 0 10px 24px;position:relative;border-bottom:1px solid rgba(125,91,166,.15);color:var(--ink);}
+.ch-list li::before{content:"✦";position:absolute;left:2px;top:11px;color:var(--gold);font-size:11px;}
+.ch-bn{font-size:13.5px;line-height:2.1;color:var(--gold-soft);margin-bottom:16px;}
+.ch-thirst{text-align:center;padding:14px 14px 4px;border-top:1px dashed rgba(201,162,39,.3);}
+.ch-thirst p{font-size:13px;line-height:2;color:var(--ink);margin-bottom:8px;}
+.ch-close{color:#e8d9a0 !important;font-size:14.5px !important;letter-spacing:.05em;}
+.bonus{margin-top:24px;padding:20px 18px;border:1px solid rgba(201,162,39,.3);border-radius:12px;background:linear-gradient(180deg,rgba(20,16,31,.8),rgba(13,9,22,.6));text-align:center;}
+.bonus-h{color:var(--gold);letter-spacing:.25em;font-size:12px;margin-bottom:14px;}
+.bonus p{font-size:13px;line-height:2.1;color:var(--ink);}
+.bonus-list{list-style:none;text-align:left;max-width:380px;margin:14px auto;padding:0;}
+.bonus-list li{font-size:13px;line-height:1.9;padding:7px 0 7px 22px;position:relative;border-bottom:1px solid rgba(125,91,166,.15);}
+.bonus-list li::before{content:"✦";position:absolute;left:0;color:var(--gold);font-size:11px;top:9px;}
+.bonus-list strong{color:var(--gold-soft);}
+.bonus-close{margin-top:14px;color:#cdbd7a;font-size:13.5px;line-height:2;}
+.bonus-close strong{color:#e8d9a0;}
+.cta-note{color:var(--muted);font-size:11px;margin-top:10px;line-height:1.9;}
+.disc{margin-top:30px;color:#6b6354;font-size:.66rem;letter-spacing:.04em;}
+</style></head><body><div class="wrap">
+<header><div class="badge">✦ LINE友だち限定 特別診断 ✦</div><h1>霊力スコア診断</h1>
+<p class="lead">友だちになってくれた、あなただけに。<br>いまのあなたの霊力の「現在値」を、十の問いで測ります。<br>まず、あなたのタイプを選んでください。</p></header>
+<div id="tsel" class="tgrid"><button class="tbtn" data-t="NORB">天啓の預言者<span>NORB</span></button><button class="tbtn" data-t="NORF">慈愛の依代<span>NORF</span></button><button class="tbtn" data-t="NOKB">夢幻の巡礼者<span>NOKB</span></button><button class="tbtn" data-t="NOKF">迷宮の亡霊<span>NOKF</span></button><button class="tbtn" data-t="XORB">降霊の執行者<span>XORB</span></button><button class="tbtn" data-t="XORF">神宿りの舞手<span>XORF</span></button><button class="tbtn" data-t="XOKB">招霊の主<span>XOKB</span></button><button class="tbtn" data-t="XOKF">霊界のムードメーカー<span>XOKF</span></button><button class="tbtn" data-t="XLRB">鋼鉄の霊査官<span>XLRB</span></button><button class="tbtn" data-t="XLRF">闇切りの狩人<span>XLRF</span></button><button class="tbtn" data-t="XLKB">好奇の検証者<span>XLKB</span></button><button class="tbtn" data-t="XLKF">閃光の突撃者<span>XLKF</span></button><button class="tbtn" data-t="NLRB">崇高なるリアリスト<span>NLRB</span></button><button class="tbtn" data-t="NLRF">世界平和の祈り人<span>NLRF</span></button><button class="tbtn" data-t="NLKB">無意識の結界師<span>NLKB</span></button><button class="tbtn" data-t="NLKF">無縁の自由人<span>NLKF</span></button></div>
+<div id="qbox"><div class="qlabel" id="qlabel"></div><div class="qt" id="qt"></div><div class="opts" id="opts"></div></div>
+<div class="prog" id="prog"></div>
+<div id="result">
+<div class="orn">— 測 定 完 了 —</div>
+<div class="gauge"><span id="score">0</span><small> / 100</small></div>
+<div class="stage" id="stage"></div>
+<div class="rcard"><span class="rname" id="rname"></span><span id="rtext"></span><hr class="rdiv"><span id="rstage"></span></div>
+<div class="change" id="change"></div>
+<a class="cta" href="#" id="ctabtn">『深淵の書』で、昇り方のすべてを知る</a>
+<p class="cta-note">あなたの段の「次へ昇る鍵」、高める3つの習慣と手放す3つの習慣、<br>守護と障り、月とともにめぐる暦——500ページ超の完全解説。</p>
+<div class="bonus">
+<div class="bonus-h">― 本書を手にした、あなたへ ―</div>
+<p>『深淵の書』を読み解いたあなたには、<br>もう「気のせい」と打ち消す夜は訪れません。</p>
+<ul class="bonus-list">
+<li>自分の力の<strong>正しい育て方</strong>を知っている</li>
+<li>すり減ったとき、自分を<strong>取り戻す作法</strong>を持っている</li>
+<li>大切なあの人との関係を、<strong>256通りから読み解ける</strong></li>
+<li>月が満ちるたび、開く<strong>自分だけの処方</strong>がある</li>
+</ul>
+<p class="bonus-close">それは、一冊の本を超えて、<br>あなたの<strong>一生の傍らに在る、深淵の地図</strong>になります。</p>
+</div>
+</div>
+<p class="disc">本診断は娯楽（エンターテインメント）を目的としたものであり、医学的・心理学的な診断ではありません。</p>
+</div><script>
+const T={"NORB": {"n": "天啓の預言者", "s": "天啓の眼", "l": "あなたの霊力は、「先を視る」かたちで育っています。この数字が上がっていくほど、予感は鮮明に、そして少し重くなっていく。だからこそ、受け取り方の作法を知っている人だけが、この力と長く付き合えます。", "q": ["「この人、近いうちに辞めそう」等の予感が当たったことが", "報道される前に、出来事の結末が視えていたことが", "夢で見た光景が、数日後に現実になったことが", "理由なく「今日は危ない」と感じて行動を変えたことが"], "sc": ["満員電車の前で「次を待とう」と思う。後で、その電車が遅延したと知る。", "会議で誰も言わない不安を、あなたが先に言葉にする。数か月後、それが現実になる。", "友人が「実は…」と切り出す前に、あなたはもう察している。"], "bn": "先を読めるあなたは、もう後手に回らない。慌てず、迷わず、人より一歩先に立てる。その余裕が、仕事の評価も、人からの信頼も、あなた自身の安心も変えていく。", "th": "でも、受信機は整えなければ雑音だらけになり、閉じ方を知らなければあなたをすり減らす。「視えてしまう」を「使いこなす」に変える手順が要る。"}, "NORF": {"n": "慈愛の依代", "s": "痛みの依代", "l": "あなたの霊力は、「受けとめる」かたちで育っています。数字が上がるほど、届く痛みは深くなる。でも大丈夫。受け取ったものを\"還す\"術さえ知れば、この優しさは、あなたをすり減らさない才能に変わります。", "q": ["落ち込んだ人と一緒にいて、自分まで沈んでしまうことが", "その場の誰かの「我慢」に、言われる前に気づくことが", "人混みから帰ると、何もしてないのに疲れ切っていることが", "あなたといると落ち着く、と言われたことが"], "sc": ["人混みで疲れ果てていた帰り道が、すっと軽くなる。受けた重さを、その日に手放せるから。", "落ち込んだ友人のそばにいても、もう一緒に沈まない。飲まれずに寄り添える。", "「あなたといると安心する」と言われる。言葉にならない痛みを、誰より早く受けとめているから。"], "bn": "共感力は、あなたを削る刃ではなく、人を癒す手に変わる。人混みも重い相談も、もう怖くない。その安心が、人間関係も、心の余白も変えていく。", "th": "でも、器は空け方を知らなければあふれ、「これは私のものではない」と仕分ける術がなければあなたを溺れさせる。"}, "NOKB": {"n": "夢幻の巡礼者", "s": "夢見の千里眼", "l": "あなたの霊力は、「意味を読む」かたちで育っています。数字が上がるほど、世界からの便りは増えていく。夢も偶然も、ぜんぶあなた宛て。あとは、その読み解き方と、溺れない作法を知るだけです。", "q": ["ふと開いた本や流れてきた曲が、今の自分に重なりすぎることが", "初めての場所なのに「夢で見た」と感じたことが", "悩みの答えが、朝の夢の中で解けていたことが", "世界が自分に語りかけている、と感じる瞬間が"], "sc": ["ふと開いた本の一行が、今日の悩みの答えそのものだった。", "「なんとなく気になる」で選んだ道が、いつも正解に近い。", "同じ毎日が、誰よりも色鮮やかに、意味に満ちて見える。"], "bn": "退屈とは無縁の、意味に満ちた毎日。世界からの便りを読み解けるその力が、選択の質も、人生の手応えも変えていく。", "th": "でも、サインは仕分ける術を知らなければ何もかもが意味に見えて、あなたを振り回す。「読まされる」を「読み解く」に変える術が要る。"}, "NOKF": {"n": "迷宮の亡霊", "s": "霊域遊泳", "l": "あなたの霊力は、「境を渡る」かたちで育っています。数字が上がるほど、二つの世界は近くなる。だからこそ\"錨\"——自分に戻ってくる術を持てば、その漂いは寄る辺なさではなく、自由になります。", "q": ["みんなといても、少し離れた場所から眺めている感覚が", "夢のほうが現実より鮮明だ、と感じる朝が", "人と話していて、どちらの感情か分からなくなることが", "「ここじゃないどこか」に故郷がある気がすることが"], "sc": ["人と深く関わっても、自分の輪郭を見失わなくなる。溶けても、ちゃんと戻ってこられる。", "対立する二人の間で、両方の気持ちが分かるあなたが、橋を架ける。", "「ここじゃないどこか」の心細さが、「どの世界にも居場所がある」感覚に変わる。"], "bn": "二つの世界を自在に行き来し、誰も思いつかない視点を持ち帰る。その自由が、創造性も、人とのつながりも変えていく。", "th": "でも、薄い境界は戻る術を知らなければ漂流になり、閉じ方を知らなければあなたをすり減らす。"}, "XORB": {"n": "降霊の執行者", "s": "祓いの執行", "l": "あなたの霊力は、「場を整える」かたちで育っています。数字が上がるほど、扱える混沌は大きくなる。あとは、自分自身を整える作法と、背負いすぎない術を知れば、その力は一生ものになります。", "q": ["場が乱れていると、放っておけず体が動いてしまうことが", "誰かの相談前に、無意識に部屋やお茶を整えていることが", "「あなたがいると場が締まる」と言われたことが", "曖昧な不安に、名前と対処を与えたくなることが"], "sc": ["混乱した現場で、真っ先に動いて段取りを立てるのは、いつもあなた。", "誰もが怯む難局で、あなただけが淡々と手順を踏める。", "頼られすぎて消耗していたあなたが、断る作法と、人に委ねる術を手にする。"], "bn": "混沌を秩序に変えるその力が、職場の信頼も、リーダーとしての評価も変えていく。そして、整える側だったあなた自身が、整えてもらえるようになる。", "th": "でも、整える力は断る術を知らなければ背負いすぎを招き、自分を清める作法がなければあなたをすり減らせる。"}, "XORF": {"n": "神宿りの舞手", "s": "神降ろし", "l": "あなたの霊力は、「宿して放つ」かたちで育っています。数字が上がるほど、降りてくるものの格も上がっていく。器を空にする術と、選んで宿す作法を知れば、あなたは飲まれずに輝けます。", "q": ["音楽や場の空気で、何かが「降りてくる」感覚が", "あなたが入ると場の温度が変わる、と言われたことが", "表現しているとき、自分を超えた何かが出てくる感覚が", "初対面の人に、なぜか深い話を打ち明けられることが"], "sc": ["あなたが部屋に入っただけで、場の空気がふっと温かくなる。", "言葉にできない想いを、表現で人の心に直接届けられる。見る人の魂が震える。", "飲まれて消耗していたあなたが、錨を下ろし、宿したものを降ろす術を手にする。"], "bn": "場に命を吹き込むその力が、表現の仕事も、人との深い結びつきも変えていく。感じすぎて疲れる毎日が、感じたものを輝きに変える毎日になる。", "th": "でも、器は降ろす術を知らなければ宿したもので壊れ、閉じ方を知らなければあなたを飲み込む。"}, "XOKB": {"n": "招霊の主", "s": "招霊の作法", "l": "あなたの霊力は、「招き、もてなす」かたちで育っています。数字が上がるほど、集まってくる縁の質が変わっていく。良い隣人だけを通す\"戸締まり\"を覚えれば、あなたの日常そのものが結界になります。", "q": ["特定の場所で「ここには誰かいる」という確信が", "見えない何かに、心の中で挨拶してしまうことが", "揉めている二人の間を取り持つ役が回ってくることが", "古い場所や物を、無下にできない感覚が"], "sc": ["ぎくしゃくした関係の間にあなたが立つだけで、対話が生まれる。", "整えられたあなたの日常そのものが、良いものを呼び、悪いものを遠ざける結界になる。", "間に立って消耗していたあなたが、来ていい縁を選び、自分の席を真ん中に置く術を手にする。"], "bn": "居場所を開くその力が、職場の和も、人との縁の質も変えていく。気づけば、あなたの周りには良い隣人だけが残っていく。", "th": "でも、招く力は戸締まりを知らなければ招かれざるものまで入れ、断る術がなければあなたを板挟みにする。"}, "XOKF": {"n": "霊界のムードメーカー", "s": "霊よ、こんにちは", "l": "あなたの霊力は、「場をほぐす」かたちで育っています。数字が上がるほど、その軽やかさは強い守りになっていく。感じたことを言葉にする術を足せば、もう誰にも軽く見られません。", "q": ["みんなが怖がる場所で、自分だけ平気だったことが", "警戒心の強い動物や子どもに、なぜか懐かれることが", "あなたが来ると場が明るくなる、と言われたことが", "準備なしでも、その場でなんとかなってしまうことが"], "sc": ["ぴりぴりした会議で、あなたの一言が場の緊張をほどく。", "初対面ばかりの集まりで、最初に垣根を壊すのは、いつもあなた。", "「なんとなく」で掴んだ最適解が、考え抜いた人より早く正解に届く。"], "bn": "重い空気に風を通すその力が、人間関係も、土壇場の対応力も変えていく。軽く見られていた「なんとなく」が、根拠ある直感として頼られる。", "th": "でも、鋭い感性は言葉にする術を知らなければ軽く見られ続け、休む術がなければ刺激に削られる。"}, "XLRB": {"n": "鋼鉄の霊査官", "s": "霊的解析眼", "l": "あなたの霊力は、「見極める」かたちで育っています。数字が上がるほど、いつか\"解けない何か\"に出会う日が近づく。そのとき慌てないための、知性の作法があります。", "q": ["みんなが盛り上がる話の、矛盾点が先に見えてしまうことが", "「本当に？」と確かめないと、気が済まないことが", "深夜の物音の原因を、頭の中で即座に解析することが", "納得できないことを、放置できない性分だと感じることが"], "sc": ["うまい話の落とし穴に、あなたが最初に気づく。", "全員が飲まれる場面で、あなただけが「本当か?」と問える。その一言が人を守る。", "「冷たい」と誤解されていたあなたが、共感を先に置く術を手にする。"], "bn": "確かさを守るその力が、仕事の判断も、人からの信頼も変えていく。あなたの言葉は「確かめ抜かれた言葉」として、特別な重みを持つ。", "th": "でも、鋭い知性は感じる心を添えなければ人を遠ざけ、「分からない」で止まる術がなければあなたを休ませない。"}, "XLRF": {"n": "闇切りの狩人", "s": "異変察知の眼", "l": "あなたの霊力は、「危険を嗅ぐ」かたちで育っています。数字が上がるほど、警報の精度は研ぎ澄まされていく。あとは、見張りを\"終える\"術を知れば、その鋭さはあなたを疲れさせません。", "q": ["「嫌な予感」で避けた先で、実際に何か起きていたことが", "人の言葉と本音のズレに、真っ先に気づくことが", "初めての場所で、まず出口や危険を確認してしまうことが", "違和感のある場所を、確かめずにいられないことが"], "sc": ["「嫌な予感」で避けた道で、後からトラブルが起きていたと知る。", "うまく行きすぎる話の裏を、あなたが真っ先に確かめる。", "気が休まらなかったあなたが、見張りを終える術と、背中を預けられる相棒を手にする。"], "bn": "危険を先に察するその力が、リスク管理も、まわりの安心も変えていく。「この人がいれば大丈夫」——あなたの鋭さは、そう思われる守りに変わる。", "th": "でも、鋭い嗅覚は退路を決めなければ深追いを招き、見張りを終える術がなければあなたを休ませない。"}, "XLKB": {"n": "好奇の検証者", "s": "怪異検証術", "l": "あなたの霊力は、「確かめる」かたちで育っています。数字が上がるほど、開く扉は増えていく。検証していいものと、そっとしておくものの見分け方を知れば、探究は一生の遊びになります。", "q": ["不気味と言われる場所に、ワクワクしてしまうことが", "おまじないやジンクスを、本当か試したくなることが", "怖い話より「どういう仕組み？」が先に来ることが", "誰もやらないことを、最初に試してみたくなることが"], "sc": ["誰も手をつけない領域に、あなたが最初に踏み込む。", "みんなが避けるものに、あなたはフラットに触れられる。あなたの「面白い」が人の「怖い」を減らす。", "移り気だったあなたが、記録を一冊に集め、興味を資産に変える術を手にする。"], "bn": "恐れを知に変えるその力が、仕事の開拓力も、人生の彩りも変えていく。退屈とは無縁の毎日が、ずっと続く。", "th": "でも、好奇心は記録する術を知らなければ遊びで終わり、検証しない領域をわきまえなければ人を傷つける。"}, "XLKF": {"n": "閃光の突撃者", "s": "閃光突撃", "l": "あなたの霊力は、「踏み込む」かたちで育っています。数字が上がるほど、届く場所は深くなる。だからこそ\"引き際\"——ちゃんと帰ってくる技を持てば、あなたはどこまでも行けます。", "q": ["気になった場所に、考える前に向かっていたことが", "「行ってみないと分からない」で動いてしまうことが", "みんなが尻込みする場面で、一人でも踏み込めることが", "通りすがりの違和感が、頭から離れなかったことが"], "sc": ["会議が百回でも出ない答えを、あなたの一度の「行ってみた」が決着させる。", "誰も手を挙げない初仕事に、あなたが最初に飛び込む。その一歩がみんなを動かす。", "「落ち着きがない」と言われたあなたが、引き際を知り、ちゃんと帰ってくる術を手にする。"], "bn": "最初の一歩を引き受けるその力が、仕事の推進力も、人からの信頼も変えていく。誰も見ぬ景色へ、先導者として立てる。", "th": "でも、瞬発力は引き際を知らなければ深部で危険を呼び、一声残す習慣がなければまわりを心配させる。"}, "NLRB": {"n": "崇高なるリアリスト", "s": "不動の礼節", "l": "あなたの霊力は、「揺れない」かたちで育っています。数字が上がるほど、その軸は静かに太くなっていく。揺れない者だけが知らない、\"ほどき方\"をひとつ足せば、もう完璧です。", "q": ["周りが騒いでいても、自分だけ冷静だったことが", "神社では信仰と関係なく、作法通りに参拝することが", "「落ち着いてるね」「大人だね」と言われることが", "感情が動いても、外に出す前に自分の中で整えることが"], "sc": ["全員が浮き足立つ局面で、あなただけがいつも通り仕事を進められる。", "流行にも恐慌にも流されず、本質だけを静かに見据える。だからあなたの言葉は重い。", "「何を考えているか分からない」と言われたあなたが、一行だけ感情を見せる術を手にする。"], "bn": "基準であり続けるその力が、危機での評価も、人との信頼も変えていく。あなたがそこにいることが、誰かの「帰ってこられる座標」になる。", "th": "でも、揺れない軸は感情を見せる術を知らなければ壁になり、頼る練習をしなければあなたを孤立させる。"}, "NLRF": {"n": "世界平和の祈り人", "s": "万愛の祈り", "l": "あなたの霊力は、「願う」かたちで育っています。数字が上がるほど、祈りの届く距離は伸びていく。その願いの中に、あなた自身を入れることを覚えたとき、この力は完成に近づきます。", "q": ["信仰はないのに、自然と手を合わせてしまう場所が", "争う二人の、どちらの気持ちも分かってしまうことが", "「世界がうまくいってほしい」と漠然と願うことが", "白黒つける話に、居心地の悪さを感じることが"], "sc": ["対立する議論で、あなただけがどちらの言い分にも耳を傾けられる。", "「あなたの前ではジャッジされない」と、人は素のままでいられる。", "「はっきりしない」と言われたあなたが、保留を言葉にし、自分も願いに入れる術を手にする。"], "bn": "分断を癒すその力が、調整役としての信頼も、人との安心も変えていく。あなたの周りには「第三の場所」を求める人が集まる。", "th": "でも、裁かない心は決める練習をしなければ動けなくなり、自分を願いに入れなければあなたをすり減らす。"}, "NLKB": {"n": "無意識の結界師", "s": "日常結界", "l": "あなたの霊力は、「暮らしで守る」かたちで育っています。数字が上がるほど、あなたの\"いつも通り\"は強い結界になっていく。その結界に大切な人を招き入れたとき、守りは癒しに変わります。", "q": ["妙な気配がしても、やることを先に済ませてしまうことが", "決まった習慣が崩れると、調子が出ないことが", "怖い話を聞いても、寝る頃には切り替わっていることが", "あなたがいると安心する、と言われたことが"], "sc": ["職場が浮き足立つ日も、あなたはいつもの手順で淡々と仕事を回せる。", "誰かが崩れたとき、あなたの「とりあえずご飯にしよう」が、その人を日常へ連れ戻す。", "「融通が利かない」と言われたあなたが、たまには自分で型を崩して遊ぶ術を手にする。"], "bn": "普通を続けるその力が、長期の信頼も、非常時の安定も変えていく。変化の時代に「何があっても崩れない人」は、どこでも稀少だ。", "th": "でも、揺るがぬ日常は張り直す術を知らなければ一度の乱れで折れ、人を招き入れなければただの孤独な秩序になる。"}, "NLKF": {"n": "無縁の自由人", "s": "無縁の盾", "l": "あなたの霊力は、「流す」かたちで育っています。数字が上がるほど、その身軽さは固い盾になっていく。手放さない\"大切な少数\"を決めたとき、あなたの自由は本物になります。", "q": ["強烈な体験談も、翌日にはさらりと忘れていることが", "周りが振り回されているものに、自分だけ動じなかったことが", "「冷めてるね」と言われるが、実は大切なものは分かっていることが", "重い空気の場から、すっと身を引けることが"], "sc": ["みんなが過去の経緯に縛られて動けないとき、あなたが「もう手放してよくない?」と言える。", "重荷を抱えた人のそばで、あなたが軽やかにいるだけで、その人の肩の力が抜ける。", "「冷めてる」と言われたあなたが、大切な人にだけ言葉を渡す術を手にする。"], "bn": "執着から降りられるその力が、こじれた状況の出口役も、人との心地よい距離も変えていく。あなたの「なんとかなるよ」は、誰かの息のつける風になる。", "th": "でも、手放す力は逃げと選びを見分けなければ漂流になり、大切な少数を言葉にしなければあなたを薄情に見せる。"}};const COMMON=["「なんとなく嫌な予感」が、当たったことが", "誰もいないはずの場所で、気配を感じたことが", "考えていた人から連絡が来る、などの偶然の一致が", "神社や古い場所で、空気の違いを肌で感じることが", "「今日はやめておこう」という直感に従って動くことが", "自分の感覚を「気のせい」と打ち消してきた経験が"];const OPTS=["ほとんどない", "一、二度ある", "時々ある", "よくある"];
+const STAGES=[[0,19,'第一段　眠り','力はまだ、深いところで眠っています。でも安心してください——この診断にたどり着いた時点で、目覚めの火種はもう灯っています。これから訪れる小さな「あれ？」を、どうか流さないでください。それが、すべての始まりになります。'],
+[20,39,'第二段　兆し','「気のせいじゃないのかも」——その入口に、あなたは立っています。この段でいちばん効くのは、感じたことを書き留めること。記録は、信じたい夜と疑いたくなる朝のあいだで揺れるあなたの代わりに、事実を覚えていてくれます。'],
+[40,59,'第三段　自覚','自分の力の"形"が、もう見え始めています。ここから先に必要なのは、がむしゃらな努力ではなく、形に合った磨き方。あなたのタイプ専用の「高める習慣」と「手放す習慣」——その対の頁が、次の段への階段になります。'],
+[60,79,'第四段　制御','力の主導権が、世界からあなたの手に移りつつあります。開きたいときに開き、休みたいときに閉じる——それができ始めているあなたに次に必要なのは、消耗しない作法と、あなたを守る存在との付き合い方です。'],
+[80,100,'第五段　開花の入口','あなたの力は、あなた個人のものを超えて、誰かの光になり始めています。この段でいちばん大切なのは、力を大きくすることではなく、力と暮らしをなじませること。すり減らない人だけが、長く照らし続けられます。']];
+let type=null,qi=0,score=0,QL=[];
+document.querySelectorAll('.tbtn').forEach(b=>b.onclick=()=>{
+ type=b.dataset.t;
+ QL=COMMON.map(q=>({q:q,lab:'共通の問い'})).concat(T[type].q.map(q=>({q:q,lab:T[type].n+'の問い'})));
+ document.getElementById('tsel').style.display='none';
+ document.getElementById('qbox').style.display='block';show();});
+function show(){
+ if(qi>=QL.length){fin();return;}
+ document.getElementById('qlabel').textContent='— '+QL[qi].lab+' —';
+ document.getElementById('qt').textContent='第'+(qi+1)+'問　'+QL[qi].q+'？';
+ const box=document.getElementById('opts');box.innerHTML='';
+ OPTS.forEach((o,p)=>{const b=document.createElement('button');b.className='opt';b.textContent=o;
+  b.onclick=()=>{score+=p;qi++;show();};box.appendChild(b);});
+ document.getElementById('prog').textContent=(qi+1)+' / '+QL.length;}
+function fin(){
+ document.getElementById('qbox').style.display='none';
+ document.getElementById('prog').style.display='none';
+ const s=Math.round(score/30*100);
+ const st=STAGES.find(x=>s>=x[0]&&s<=x[1]);
+ const t=T[type];
+ document.getElementById('score').textContent=s;
+ document.getElementById('stage').textContent='覚醒段階：'+st[2];
+ document.getElementById('rname').textContent=t.n+'のあなたへ ── 必殺技【'+t.s+'】';
+ document.getElementById('rtext').textContent=t.l;
+ document.getElementById('rstage').textContent=st[3];
+ var sc=t.sc.map(function(x){return '<li>'+x+'</li>';}).join('');
+ document.getElementById('change').innerHTML=
+  '<div class="ch-h">― 霊力がひらくと、あなたの毎日はこう変わる ―</div>'
+  +'<ul class="ch-list">'+sc+'</ul>'
+  +'<p class="ch-bn">'+t.bn+'</p>'
+  +'<div class="ch-thirst"><p>'+t.th+'</p>'
+  +'<p class="ch-close">その答えのすべては、まだ、ここには書かれていません。</p></div>';
+ document.getElementById('result').style.display='block';window.scrollTo(0,0);}
+</script></body></html>
