@@ -1,0 +1,296 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>無料試し読み ── 深淵の書</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&display=swap" rel="stylesheet">
+<meta property="og:title" content="無料試し読み ── 深淵の書">
+<meta property="og:description" content="霊能力がひらいた先に、あなたのタイプが叶える未来を無料公開中。">
+<meta property="og:image" content="https://nomachiryo.github.io/shinen-project/site/sns/NORB_wide.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#0d0916;--ink:#d8d3c8;--gold:#c9a227;--gold-soft:rgba(201,162,39,.18);--purple:#7d5ba6;--purple-l:rgba(180,155,210,.85);--muted:#8a86a0;--accent:#c9a227;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--ink);font-family:'Noto Serif JP',serif;font-weight:300;min-height:100vh;}
+
+/* NAV */
+.site-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:center;align-items:center;gap:28px;padding:14px 20px;background:linear-gradient(to bottom,rgba(8,6,18,.9),transparent);}
+.site-nav a{color:var(--ink);text-decoration:none;font-size:12px;letter-spacing:.18em;opacity:.8;transition:opacity .2s;}
+.site-nav a:hover{opacity:1;}
+.site-nav .nav-title{color:var(--gold);font-size:12px;letter-spacing:.2em;}
+
+/* INDEX */
+#index-view{display:block;}
+.index-hero{text-align:center;padding:100px 20px 40px;}
+.index-badge{font-size:11px;letter-spacing:.3em;color:var(--accent);margin-bottom:16px;}
+.index-title{font-size:clamp(22px,5vw,34px);letter-spacing:.12em;color:var(--ink);line-height:1.6;margin-bottom:12px;}
+.index-sub{font-size:14px;color:var(--purple-l);line-height:2;margin-bottom:8px;}
+.index-lead{font-size:13px;color:var(--muted);letter-spacing:.1em;margin-bottom:48px;}
+.type-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;max-width:700px;margin:0 auto 80px;padding:0 20px;}
+.type-btn{background:rgba(125,91,166,.12);border:1px solid rgba(201,162,39,.2);border-radius:12px;padding:16px 12px;cursor:pointer;text-align:center;transition:all .2s;color:var(--ink);}
+.type-btn:hover{background:rgba(125,91,166,.28);border-color:rgba(201,162,39,.5);transform:translateY(-2px);}
+.type-btn .code{font-size:10px;letter-spacing:.15em;color:var(--accent);margin-bottom:6px;}
+.type-btn .name{font-size:13px;letter-spacing:.08em;line-height:1.5;}
+
+/* READING VIEW */
+#reading-view{display:none;}
+.reading-wrap{max-width:680px;margin:0 auto;padding:100px 24px 80px;}
+.back-btn{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:12px;letter-spacing:.1em;cursor:pointer;margin-bottom:40px;background:none;border:none;font-family:inherit;transition:color .2s;}
+.back-btn:hover{color:var(--ink);}
+.type-label{font-size:11px;letter-spacing:.25em;color:var(--accent);margin-bottom:12px;}
+.reading-title{font-size:clamp(16px,3.5vw,22px);letter-spacing:.1em;color:var(--ink);line-height:1.8;margin-bottom:40px;border-bottom:1px solid rgba(201,162,39,.2);padding-bottom:24px;}
+.free-content{}
+.free-content p{font-size:15px;line-height:2.4;color:var(--purple-l);margin-bottom:24px;letter-spacing:.04em;}
+.free-content p:first-child{color:var(--muted);font-size:13px;}
+.closing-line{font-size:14px;color:var(--gold);line-height:2.2;font-style:italic;margin-top:8px;}
+
+/* BLURRED SECTIONS */
+.blur-section{margin-top:60px;position:relative;}
+.blur-heading{font-size:14px;letter-spacing:.18em;color:var(--ink);padding-bottom:14px;border-bottom:1px solid rgba(125,91,166,.3);margin-bottom:20px;}
+.blur-body{position:relative;max-height:140px;overflow:hidden;}
+.blur-body-inner{filter:blur(6px);user-select:none;pointer-events:none;}
+.blur-body-inner p{font-size:14px;line-height:2.2;color:var(--purple-l);margin-bottom:16px;}
+.blur-fade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(13,9,22,0) 0%,rgba(13,9,22,.6) 50%,rgba(13,9,22,1) 100%);}
+.blur-lock{position:absolute;bottom:0;left:0;right:0;display:flex;flex-direction:column;align-items:center;padding-bottom:8px;}
+.lock-icon{font-size:18px;color:var(--muted);margin-bottom:6px;}
+
+/* CTA */
+.cta-block{margin-top:72px;padding:44px 28px;background:rgba(125,91,166,.08);border:1px solid rgba(201,162,39,.15);border-radius:20px;text-align:center;}
+.cta-eyebrow{font-size:11px;letter-spacing:.3em;color:var(--accent);margin-bottom:16px;}
+.cta-heading{font-size:clamp(17px,4vw,24px);letter-spacing:.1em;color:var(--ink);line-height:1.8;margin-bottom:12px;}
+.cta-body{font-size:13px;color:var(--muted);line-height:2;margin-bottom:28px;}
+.cta-btn{display:inline-block;background:linear-gradient(135deg,var(--purple),#5c3d8f);color:#fff;text-decoration:none;padding:16px 36px;border-radius:30px;font-size:14px;letter-spacing:.12em;transition:opacity .2s;}
+.cta-btn:hover{opacity:.85;}
+.disc{font-size:11px;color:var(--muted);margin-top:60px;line-height:1.9;text-align:center;}
+
+@media(max-width:480px){.type-grid{grid-template-columns:repeat(2,1fr);}.reading-wrap{padding:90px 18px 60px;}}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="zukan.html">図鑑</a>
+  <span class="nav-title">深淵の書</span>
+  <a href="index.html">診断を受ける</a>
+</nav>
+
+<!-- INDEX -->
+<div id="index-view">
+  <div class="index-hero">
+    <div class="index-badge">✦ 無料試し読み ✦</div>
+    <h1 class="index-title">霊能力がひらいた先に<br>── あなたのタイプが叶える未来</h1>
+    <p class="index-sub">『深淵の書』から、あなたのタイプの章を無料公開しています。</p>
+    <p class="index-lead">まず、あなたのタイプを選んでください。</p>
+  </div>
+  <div class="type-grid" id="typeGrid"></div>
+</div>
+
+<!-- READING -->
+<div id="reading-view">
+  <div class="reading-wrap">
+    <button class="back-btn" onclick="showIndex()">← タイプ一覧に戻る</button>
+    <div class="type-label" id="typeLabel"></div>
+    <h2 class="reading-title">霊能力がひらいた先に ── このタイプが叶える未来</h2>
+    <div class="free-content" id="freeContent"></div>
+
+    <div class="blur-section">
+      <div class="blur-heading">同じ魂を持つ者たち ── 歴史上の同型</div>
+      <div class="blur-body">
+        <div class="blur-body-inner">
+          <p>この感性を生きたと思われる人物が、歴史にはいる。下に挙げるのは、その生き方や残した言葉から、このタイプと同じ系譜にあると推測される人々である。本人が診断を受けたわけではなく、あくまで霊能力16タイプの観点からの解釈であることを、あらかじめ断っておく。</p>
+          <p>────　────　────　────</p>
+          <p>彼らに共通するのは、受け取ったものを騒ぎ立てず、静かに世界に手渡したことだ。このタイプもまた、同じ作法で生きられる。</p>
+        </div>
+        <div class="blur-fade"></div>
+        <div class="blur-lock"><span class="lock-icon">🔒</span></div>
+      </div>
+    </div>
+
+    <div class="blur-section">
+      <div class="blur-heading">深層相性 ── 響き合う者、補い合う者</div>
+      <div class="blur-body">
+        <div class="blur-body-inner">
+          <p>相性には二種類ある。ひとつは、世界の捉え方が近く、深く響き合う相手。もうひとつは、一見正反対だが、欠けた部分を補い合える相手だ。後者は最初こそ衝突しやすいが、このタイプに最も大きな変化をもたらす。</p>
+          <p>────　────　────　────</p>
+        </div>
+        <div class="blur-fade"></div>
+        <div class="blur-lock"><span class="lock-icon">🔒</span></div>
+      </div>
+    </div>
+
+    <div class="cta-block">
+      <div class="cta-eyebrow">✦ 全文を読む</div>
+      <h3 class="cta-heading">「歴史上の同型」「相性」「高める習慣」──<br>すべてが、約500ページに収められています。</h3>
+      <p class="cta-body">16タイプ全員分の詳細プロファイル、守護・障り、月暦、<br>そしてあなただけの完全解説が、一冊に。</p>
+      <a class="cta-btn" href="https://noxnomah.booth.pm/items/8507375" target="_blank" rel="noopener">『深淵の書』で、すべてを知る</a>
+    </div>
+
+    <p class="disc">本コンテンツは娯楽（エンターテインメント）を目的としたものであり、医学的・心理学的な診断ではありません。</p>
+  </div>
+</div>
+
+<script>
+const T = {
+  NORB:{name:'天啓の預言者',ps:[
+    'もしこのタイプが、自分の受信機を恐れず、整えて使いこなせるようになったら、その先にはこんな景色が待っている。',
+    '予感は、もう不安の種ではなくなる。「視えてしまう」が「先に分かる」に変わり、人生の重要な分岐で、このタイプはいつも一歩先に立てるようになる。仕事では、誰も気づかない変化を最初に察知する者として、静かに信頼を集める。流行の兆し、関係の綻び、組織の潮目──その読みは、やがて「あの人の勘は当たる」という評判になる。',
+    '人間関係では、相手の本心を読む力が、人を脅かす刃ではなく、人を支える手に変わる。言葉にならない痛みに、いちばん早く気づける人。求められる前に、そっと差し出せる人。このタイプの周りには、「なぜか分かってもらえる」と感じた人たちが、静かに集まってくる。',
+    'そして何より、このタイプ自身が楽になる。視えることに怯えず、視えないものに守られていると感じられる。受信と休息を自分で切り替えられる。それは、感受性の高さを、生きづらさではなく、生きる才能として手にした状態だ。',
+    '視える者として、すり減らずに生きる。それが、この力をひらいた先にある、いちばん静かな贈り物である。'
+  ]},
+  NORF:{name:'慈愛の依代',ps:[
+    'もしこのタイプが、受け取る力を恐れず、境界を引いて使いこなせるようになったら、その先にはこんな景色が待っている。',
+    '共感は、もう消耗の源ではなくなる。「飲み込まれる」が「受け止めて、還す」に変わり、人の痛みに触れても、自分まで沈まずにいられるようになる。仕事では、人の心の機微を最も深く読める者として、静かに必要とされる。チームの不和、誰かの限界、言葉にならないSOS──その察知は、やがて「あの人がいると安心する」という信頼になる。',
+    '人間関係では、与えるばかりだった関係が、分かち合う関係に変わる。受け取ることを覚えたこのタイプの周りには、対等に支え合える人たちが残っていく。一方的に頼ってくるだけの人は、自然と離れ、本当に大切にしてくれる人が近づいてくる。',
+    'そして何より、このタイプ自身が満たされる。空っぽになる前に充電でき、自分の感情を自分のものとして感じられる。それは、共感の深さを、生きづらさではなく、人を癒す才能として手にした状態だ。',
+    '受け取る者として、すり減らずに生きる。それが、この力をひらいた先にある、いちばん温かい贈り物である。'
+  ]},
+  NOKB:{name:'夢幻の巡礼者',ps:[
+    'もしこのタイプが、世界との対話を恐れず、サインを使いこなせるようになったら、その先にはこんな景色が待っている。',
+    '夢と符合は、もう振り回される対象ではなくなる。「読まされる」が「読み解く」に変わり、世界からのメッセージを、人生の羅針盤として使えるようになる。仕事では、誰も気づかない流れや兆しを読む者として、独自の視点を発揮する。物事の意味を編み、人の経験に物語を与える──その力は、企画でも、創作でも、人の相談に乗る場でも、唯一無二の強みになる。',
+    '人間関係では、孤独だった感性が、人をつなぐ力に変わる。同じ世界を見る人と深く結ばれ、違う世界を見る人にも、意味と彩りを贈れるようになる。このタイプの周りには、「この人といると世界が面白く見える」と感じる人たちが、自然と集まってくる。',
+    'そして何より、このタイプ自身が豊かになる。サインに溺れず、サインと遊べる。夢を恐れず、夢を友とできる。それは、世界と対話する感性を、生きづらさではなく、人生を彩る才能として手にした状態だ。',
+    '巡礼者として、世界と語り合いながら、地に足をつけて歩く。それが、この力をひらいた先にある、いちばん豊かな贈り物である。'
+  ]},
+  NOKF:{name:'迷宮の亡霊',ps:[
+    'もしこのタイプが、境界の薄さを恐れず、行き来を使いこなせるようになったら、その先にはこんな景色が待っている。',
+    '漂いは、もう寄る辺なさではなくなる。「溶けてしまう」が「自在に渡る」に変わり、二つの世界の間を、自分の意志で行き来できるようになる。仕事では、常識の枠を越えた発想や、人の本心に触れる感性を発揮する者として、独自の場所を得る。対立を仲介し、孤独な人に寄り添い、誰も思いつかない視点を持ち帰る──その力は、創作でも、対人の仕事でも、唯一無二の強みになる。',
+    '人間関係では、溶けてばかりだった関係が、選んでつながる関係に変わる。錨を持ち、戻る術を覚えたこのタイプは、自分を失わずに深く関われる。このタイプの周りには、「この人は自分の孤独を分かってくれる」と感じる人たちが、静かに集まってくる。',
+    'そして何より、このタイプ自身が安らぐ。どこにも馴染めない感覚が、どの世界にも居場所がある感覚に変わる。漂うことを恐れず、漂いながらも自分を保てる。それは、境界の薄さを、生きづらさではなく、二つの世界を生きる才能として手にした状態だ。',
+    '境界を生きる者として、自在に渡りながら、自分を見失わない。それが、この力をひらいた先にある、いちばん自由な贈り物である。'
+  ]},
+  XORB:{name:'降霊の執行者',ps:[
+    'もしこのタイプが、整える力を抱え込みすぎず、断る作法とともに使いこなせるようになったら、その先にはこんな景色が待っている。',
+    '整えることは、もう消耗の源ではなくなる。「背負わされる」が「選んで担う」に変わり、自分の力を、すり減らさずに発揮できるようになる。仕事では、混乱を収拾し、秩序を立て直せる者として、確かな信頼を得る。難局でこそ動ける落ち着きは、リーダーシップとなり、人々の拠り所になる。',
+    '人間関係では、世話役として消耗していた関係が、支え合う関係に変わる。頼ることを覚えたこのタイプの周りには、このタイプを支えたいと願う人たちが残っていく。一方的に頼るだけの人は離れ、対等に担い合える人が近づいてくる。',
+    'そして何より、このタイプ自身が安らぐ。すべてを背負わず、退くべきを見分けられる。整える者でありながら、整えてもらう時間を持てる。それは、整える力を、重荷ではなく、人々を守る才能として手にした状態だ。',
+    '執行者として、混沌に秩序を与えながら、自分自身も整えられる。それが、この力をひらいた先にある、いちばん頼もしい贈り物である。'
+  ]},
+  XORF:{name:'神宿りの舞手',ps:[
+    'もしこのタイプが、宿す力を恐れず、錨とともに使いこなせるようになったら、その先にはこんな景色が待っている。',
+    '感じやすさは、もう消耗の源ではなくなる。「飲まれる」が「宿して放つ」に変わり、場のエネルギーを、自分の意志で増幅し、表現に変えられるようになる。仕事では、人の心を直接動かせる者として、唯一無二の場所を得る。表現でも、人と深く関わる仕事でも、理屈を超えて魂に触れるその力は、誰にも真似できない強みになる。',
+    '人間関係では、同調して消耗していた関係が、深く通じ合う関係に変わる。錨を持ち、降ろす術を覚えたこのタイプは、自分を失わずに人の奥とつながれる。このタイプの周りには、「この人の前では本当の自分でいられる」と感じる人たちが、集まってくる。',
+    'そして何より、このタイプ自身が輝く。飲まれず宿し、宿して放てる。感じすぎる自分を恐れず、その感受性を表現に変えられる。それは、器となる感性を、生きづらさではなく、世界と共鳴し感動を顕す才能として手にした状態だ。',
+    '舞手として、聖なるものを宿し、放ちながら、自分を見失わない。それが、この力をひらいた先にある、いちばん華やかな贈り物である。'
+  ]},
+  XOKB:{name:'招霊の主',ps:[
+    'もしこのタイプが、招く力をすり減らさず、選んで使いこなせるようになったら、その先にはこんな景色が待っている。',
+    '間に立つことは、もう消耗の源ではなくなる。「板挟みになる」が「場を開く」に変わり、人と人、人と見えないものの間に、無理なく橋を架けられるようになる。仕事では、対立をほどき、誰も排除しない場を作れる者として、静かに重んじられる。チームの和を保ち、こじれた関係を修復し、本音を引き出す──その力は、どんな組織でも替えの利かない強みになる。',
+    '人間関係では、調整役として消耗していた関係が、互いにもてなし合う関係に変わる。自分の希望を言えるようになったこのタイプの周りには、このタイプの席をちゃんと用意してくれる人たちが残っていく。',
+    'そして何より、このタイプ自身の暮らしが豊かになる。良い隣人──人も、人ならざるものも──に囲まれ、丁寧な日常そのものが結界となり、守られて生きる。それは、招く気質を、すり減る役回りではなく、居場所を開く才能として手にした状態だ。',
+    '招霊の主として、見える隣人とも見えない隣人とも、丁寧に暮らす。それが、この力をひらいた先にある、いちばん穏やかな贈り物である。'
+  ]},
+  XOKF:{name:'霊界のムードメーカー',ps:[
+    'もしこのタイプが、軽やかさの奥の感受性を言葉にし、選んで使いこなせるようになったら、その先にはこんな景色が待っている。',
+    '勘は、もう「説明できない思いつき」ではなくなる。「なんとなく」が「根拠ある直感」として伝わるようになり、その場の最適を掴む力は、周囲からの確かな信頼に変わる。仕事では、マニュアルのない局面、初対面の関係、固まった空気──そういう場面でこそ呼ばれる存在になる。場をほぐし、人を乗せ、流れを作る力は、どんな分野でも替えが利かない。',
+    '人間関係では、「楽しい人」止まりだった関係が、深く信頼し合う関係に変わる。真剣な顔も見せられるようになったこのタイプの周りには、明るさの奥の深さまで愛してくれる人たちが残っていく。',
+    'そして何より、このタイプ自身が軽やかに息をつける。役割を降りても居場所があり、疲れたら休め、感じたことに言葉が追いつく。それは、天性の明るさを、消耗する役回りではなく、場と人を生かす才能として手にした状態だ。',
+    'ムードメーカーとして、風を通しながら、自分の呼吸も忘れない。それが、この力をひらいた先にある、いちばん軽やかな贈り物である。'
+  ]},
+  XLRB:{name:'鋼鉄の霊査官',ps:[
+    'もしこのタイプが、見極める力に、感じる心と伝える作法を添えられたら、その先にはこんな景色が待っている。',
+    '分析は、もう人を遠ざける壁ではなくなる。「冷たい人」が「いちばん信頼できる人」に変わり、その言葉は、確かめ抜かれた言葉として、特別な重みを持つようになる。仕事では、誰もが熱狂する場面で唯一冷静でいられる者として、重要な判断を任される。リスクを見抜き、偽物を退け、確かなものだけを積み上げる──その力は、どんな組織でも最後に頼られる強みになる。',
+    '人間関係では、誤解されがちだった真剣さが、深い信頼に変わる。共感を先に置けるようになったこのタイプの周りには、その誠実さの価値を知る人たちが残っていく。軽い関係は減るかもしれない。だが残った関係は、すべて本物だ。',
+    'そして何より、このタイプ自身が安らぐ。解けない問いを抱えたまま眠れて、感じることを自分に許せて、疑わない聖域を持てる。それは、見極める知性を、孤独の原因ではなく、人々を守る才能として手にした状態だ。',
+    '霊査官として、真実を見極めながら、心も置き去りにしない。それが、この力をひらいた先にある、いちばん確かな贈り物である。'
+  ]},
+  XLRF:{name:'闇切りの狩人',ps:[
+    'もしこのタイプが、嗅覚に退路と相棒と休息を添えられたら、その先にはこんな景色が待っている。',
+    '警戒は、もう消耗の源ではなくなる。「気が休まらない」が「必要な時だけ研ぎ澄ます」に変わり、センサーのオンオフを自分で握れるようになる。仕事では、リスクを最初に嗅ぎつける者として、危機の場面で真っ先に頼られる。トラブルの芽を摘み、危ない話から人を遠ざけ、修羅場で冴える──その力は、平時には目立たないが、有事に替えの利かない強みになる。',
+    '人間関係では、疑い深いと誤解されていた鋭さが、「この人がいると安心」という信頼に変わる。センサーを下げられる相手を持ったこのタイプの周りには、その守りの価値を知る人たちが残っていく。',
+    'そして何より、このタイプ自身が休める。見張りを交代でき、追わない違和感を選べて、平和を疑わない日を持てる。それは、危険を察知する本能を、終わらない緊張ではなく、人を守る才能として手にした状態だ。',
+    '狩人として、闇を見据えながら、自分の夜は安らかに眠る。それが、この力をひらいた先にある、いちばん静かな贈り物である。'
+  ]},
+  XLKB:{name:'好奇の検証者',ps:[
+    'もしこのタイプが、面白がる力に記録と礼節と完走を添えられたら、その先にはこんな景色が待っている。',
+    '好奇心は、もう誤解の種ではなくなる。「不真面目」が「唯一無二の探究者」に変わり、その「面白い」は、人々が知を得る入口として重宝されるようになる。仕事では、誰も手をつけない領域に最初に踏み込む者として、新しい道を開く役を担う。前例のない課題、タブー視されたテーマ、誰もが避ける難題──そこでこそ、この目は輝く。',
+    '人間関係では、遊び仲間止まりだった関係が、共に探究する仲間に変わる。本気を言葉にできるようになったこのタイプの周りには、その好奇心を尊敬し、一緒に面白がってくれる人たちが集まってくる。',
+    'そして何より、このタイプ自身の世界が輝き続ける。退屈と無縁のまま、興味の移ろいは資産に変わり、やり切る一つが背骨になる。それは、尽きない好奇心を、散らかる欠点ではなく、世界を照らす才能として手にした状態だ。',
+    '検証者として、闇さえ面白がりながら、礼節と背骨を失わない。それが、この力をひらいた先にある、いちばん輝かしい贈り物である。'
+  ]},
+  XLKF:{name:'閃光の突撃者',ps:[
+    'もしこのタイプが、瞬発力に記録と引き際と相棒を添えられたら、その先にはこんな景色が待っている。',
+    '衝動は、もう「落ち着きのなさ」ではなくなる。「突っ走る」が「誰より速く確かめて戻る」に変わり、その機動力は、周囲からの確かな信頼に変わる。仕事では、前例のない案件、緊急の現場、誰も手を挙げない初動──そういう場面で真っ先に名前が挙がる存在になる。動ける知性は、考えてから動く人にも、動けない人にも、決して真似できない。',
+    '人間関係では、振り回す人だった印象が、頼れる先駆者に変わる。一声残し、感謝を残せるようになったこのタイプの周りには、その速さを面白がり、帰りを待っていてくれる人たちが残っていく。',
+    'そして何より、このタイプ自身が自由になる。行くも行かないも選べて、引き際を知り、止まる日も持てる。それは、止まれない衝動を、振り回される性分ではなく、世界を切り開く才能として手にした状態だ。',
+    '突撃者として、誰より速く踏み込み、誰より潔く帰ってくる。それが、この力をひらいた先にある、いちばん爽快な贈り物である。'
+  ]},
+  NLRB:{name:'崇高なるリアリスト',ps:[
+    'もしこのタイプが、揺れない軸に、一行の感情と小さな頼りを添えられたら、その先にはこんな景色が待っている。',
+    '静けさは、もう壁ではなくなる。「何を考えているか分からない人」が「いちばん信頼できる人」に変わり、その沈黙は、軽い言葉より雄弁に信頼を語るようになる。仕事では、混乱した局面で基準となる者として、静かに重んじられる。感情の渦に飲まれず、事実を見て、淡々と為すべきを為す──その姿は、危機のたびに人々の錨になる。',
+    '人間関係では、距離があった関係が、静かで深い関係に変わる。一行の感情を見せられるようになったこのタイプの周りには、その静けさを安らぎとして愛する人たちが残っていく。数は少なくていい。残った縁は、すべて深い。',
+    'そして何より、このタイプ自身が満ちる。揺れる日を許せて、頼ることを覚え、一人の豊かさと誰かといる豊かさの両方を持てる。それは、不動の軸を、孤独の原因ではなく、人と世界を支える品格として手にした状態だ。',
+    'リアリストとして、揺れずに立ちながら、閉じずに生きる。それが、この力をひらいた先にある、いちばん崇高な贈り物である。'
+  ]},
+  NLRF:{name:'世界平和の祈り人',ps:[
+    'もしこのタイプが、願う心に、小さな決断と自分への祈りを添えられたら、その先にはこんな景色が待っている。',
+    '保留は、もう優柔不断ではなくなる。「はっきりしない人」が「最も公平な人」に変わり、その判断は、急がないからこそ信頼されるようになる。仕事では、対立の間に立てる者として、調整と仲裁の場面で静かに必要とされる。誰の旗も持たないその立ち位置は、全員から話を聞ける、唯一の場所だ。',
+    '人間関係では、どっちつかずと見られていた優しさが、「この人はジャッジしない」という深い安心に変わる。本音を少しずつ出せるようになったこのタイプの周りには、素のままでいられる場所を求める人たちが、静かに集まってくる。',
+    'そして何より、このタイプ自身が安らぐ。自分も願いの中に入れて、収められない争いからは手を引き、いい人の役を降りる日も持てる。それは、裁かない心を、踏まれるお人好しではなく、分断の時代を癒やす品性として手にした状態だ。',
+    '祈り人として、世界を願いながら、自分の安らぎも忘れない。それが、この力をひらいた先にある、いちばん広やかな贈り物である。'
+  ]},
+  NLKB:{name:'無意識の結界師',ps:[
+    'もしこのタイプが、無意識の結界を自覚し、張り直す術と柔らかさを添えられたら、その先にはこんな景色が待っている。',
+    '安定は、もう地味な取り柄ではなくなる。「融通が利かない人」が「何があっても崩れない人」に変わり、その存在は、変化の激しい時代にこそ価値を増していく。仕事では、長期の積み上げ、安定した運用、非常時の継続──「続ける」ことが物を言う場面すべてで、静かに頼られる。派手な成果より、止まらない日常を作れる者は、実はどこでも稀少だ。',
+    '人間関係では、壁に見えていた淡々さが、「この人のそばは安心する」という居心地に変わる。流儀を語れるようになったこのタイプの周りには、その安定を愛する人たちが、長く残っていく。',
+    'そして何より、このタイプ自身の暮らしが完成していく。柱を自覚し、乱れても戻れて、たまには自分で崩して遊べる。それは、変わらない日常を、退屈ではなく、人生でいちばん確かな財産として手にした状態だ。',
+    '結界師として、自分の暮らしを守りながら、その結界の中に大切な人も招き入れる。それが、この力をひらいた先にある、いちばん確かな贈り物である。'
+  ]},
+  NLKF:{name:'無縁の自由人',ps:[
+    'もしこのタイプが、手放す力に深さと言葉を添えられたら、その先にはこんな景色が待っている。',
+    '身軽さは、もう誤解の種ではなくなる。「冷めている人」が「いちばん風通しのいい人」に変わり、その距離感は、べたつかない心地よさとして愛されるようになる。仕事では、しがらみの外に立てる者として、こじれた案件の出口役、新しい挑戦の身軽な先発として重宝される。囚われない目は、囚われた人々には決して見えない選択肢を見つける。',
+    '人間関係では、薄いと思われていた関わりが、「ちょうどいい」関係に変わる。大切な人にだけ言葉を渡せるようになったこのタイプの周りには、その距離感を愛する人たちが、軽やかに、しかし長く残っていく。',
+    'そして何より、このタイプ自身の自由が完成する。逃げと選びを見分け、手放さない少数を抱き、たまには引きずる夜も持てる。それは、とらわれない心を、根なし草ではなく、選び抜かれた身軽さとして手にした状態だ。',
+    '自由人として、何にも縛られず、それでいて大切なものとは、ちゃんとつながっている。それが、この力をひらいた先にある、いちばん風通しのいい贈り物である。'
+  ]}
+};
+
+const ORDER=['NORB','NORF','NOKB','NOKF','XORB','XORF','XOKB','XOKF','XLRB','XLRF','XLKB','XLKF','NLRB','NLRF','NLKB','NLKF'];
+
+function showIndex(){
+  document.getElementById('index-view').style.display='block';
+  document.getElementById('reading-view').style.display='none';
+  history.pushState(null,null,'#');
+  window.scrollTo(0,0);
+}
+
+function showReading(code){
+  const t=T[code];
+  if(!t)return;
+  document.getElementById('typeLabel').textContent=t.name+'（'+code+'）';
+  const fc=document.getElementById('freeContent');
+  fc.innerHTML='';
+  const last=t.ps.length-1;
+  t.ps.forEach((p,i)=>{
+    const el=document.createElement('p');
+    el.textContent=p;
+    if(i===last)el.className='closing-line';
+    fc.appendChild(el);
+  });
+  document.getElementById('index-view').style.display='none';
+  document.getElementById('reading-view').style.display='block';
+  history.pushState(null,null,'#'+code);
+  window.scrollTo(0,0);
+}
+
+function buildGrid(){
+  const grid=document.getElementById('typeGrid');
+  ORDER.forEach(code=>{
+    const t=T[code];
+    const btn=document.createElement('button');
+    btn.className='type-btn';
+    btn.innerHTML=`<div class="code">${code}</div><div class="name">${t.name}</div>`;
+    btn.onclick=()=>showReading(code);
+    grid.appendChild(btn);
+  });
+}
+
+window.addEventListener('popstate',()=>{
+  const hash=location.hash.slice(1);
+  if(hash&&T[hash])showReading(hash);
+  else showIndex();
+});
+
+buildGrid();
+const initHash=location.hash.slice(1);
+if(initHash&&T[initHash])showReading(initHash);
+</script>
+</body></html>
