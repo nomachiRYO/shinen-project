@@ -450,12 +450,13 @@ body{font-family:'Noto Serif JP','Noto Serif CJK JP',serif;
 }
 
 /* LINE CTA */
-.line-cta{background:rgba(30,20,50,.7);border:1px solid #7d5ba6;border-radius:18px;padding:28px 22px;margin:24px 0;}
-.line-cta-label{color:#b89dd6;font-size:12px;letter-spacing:.2em;text-align:center;margin-bottom:14px;}
-.line-cta-lead{font-size:15px;color:#e8d5f5;text-align:center;margin-bottom:18px;line-height:1.7;}
-.line-benefits{list-style:none;padding:0;margin:0 0 22px;display:flex;flex-direction:column;gap:12px;}
-.line-benefits li{font-size:13px;color:#c9b3e0;line-height:1.6;padding:10px 14px;background:rgba(255,255,255,.04);border-radius:10px;}
-.line-benefits li strong{color:#e8d5f5;}
+.line-cta{background:linear-gradient(150deg,rgba(45,22,75,.94) 0%,rgba(18,10,38,.98) 100%);border:1px solid rgba(201,162,39,.38);border-radius:22px;padding:36px 28px;margin:28px 0;box-shadow:0 10px 56px rgba(125,91,166,.28),inset 0 1px 0 rgba(201,162,39,.14);position:relative;overflow:hidden;}
+.line-cta::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,162,39,.6),transparent);}
+.line-cta-label{color:#c9a227;font-size:11px;letter-spacing:.32em;text-align:center;margin-bottom:20px;opacity:.9;}
+.line-cta-lead{font-size:15px;color:#ecdff5;text-align:center;margin-bottom:28px;line-height:1.9;}
+.line-benefits{list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:14px;}
+.line-benefits li{font-size:13px;color:#cbb8e2;line-height:1.8;padding:18px 20px 18px 22px;background:linear-gradient(135deg,rgba(125,91,166,.16) 0%,rgba(55,25,90,.24) 100%);border-radius:14px;border:1px solid rgba(201,162,39,.2);border-left:3px solid rgba(201,162,39,.7);box-shadow:0 2px 12px rgba(0,0,0,.18);}
+.line-benefits li strong{color:#f2e4ff;font-size:14px;letter-spacing:.02em;}
 .line-btn{background:linear-gradient(135deg,#06c755,#04a844);color:#fff;display:block;text-align:center;padding:17px 0;border-radius:30px;font-size:15px;font-weight:bold;text-decoration:none;box-shadow:0 6px 24px rgba(6,199,85,.3);letter-spacing:.05em;}
 .line-note{font-size:11px;color:#9880b0;text-align:center;margin-top:12px;}
 
