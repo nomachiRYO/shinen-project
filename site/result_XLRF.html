@@ -463,6 +463,9 @@ body{font-family:'Noto Serif JP','Noto Serif CJK JP',serif;
 .sns-btns{display:flex;flex-direction:column;gap:12px;max-width:320px;margin:22px auto 0;}
 .sns-btn{display:flex;align-items:center;justify-content:center;gap:9px;padding:14px 20px;border-radius:28px;font-size:14px;font-weight:bold;text-decoration:none;letter-spacing:.04em;transition:opacity .18s;}
 .sns-btn:hover{opacity:.82;}
+.share-img-wrap{width:100%;margin-bottom:6px;}
+.share-img{width:100%;border-radius:12px;display:block;box-shadow:0 4px 20px rgba(0,0,0,.4);}
+.share-img-note{font-size:11px;color:var(--muted);text-align:center;margin-top:8px;margin-bottom:18px;letter-spacing:.04em;}
 .x-btn{background:#000;color:#fff;}
 .ig-btn{background:linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);color:#fff;}
 .line-btn2{background:#06c755;color:#fff;}
@@ -526,16 +529,6 @@ body{font-family:'Noto Serif JP','Noto Serif CJK JP',serif;
 <section class="sec reveal"><h2>霊的日常の観測ログ</h2><p class="sec-lead">あなたには、思い当たることばかりのはずです。</p><div class="logs"><div class="log"><div class="log-t">「「なんとなく」が外れない」</div><div class="log-d">理由のない違和感が来たとき、無視せずに動いた結果、たいてい何かある。その精度が、自分でも少し不思議になることがある。</div></div><div class="log"><div class="log-t">「嫌な感じがする場所は、なんとなく避ける」</div><div class="log-d">信仰があるわけじゃない。でも「やっておいた方がいい」という感覚で、自然と足が止まる。しきたりはしきたりとして、守る。</div></div><div class="log"><div class="log-t">「気になると確かめずにいられない」</div><div class="log-d">普通の人が「まあいいか」で済ませる場面で、あなただけが一歩踏み込んでしまう。怖いというより、放置できない。</div></div></div></section>
 <section class="sec reveal"><h2>あなたの強み</h2><div class="cards"><div class="card"><div class="t">侮らない慎重さ</div><div class="dd">相手を過小評価しない。だからこそ最悪を想定でき、危機を未然に防げる。</div></div><div class="card"><div class="t">危険を察知する勘</div><div class="dd">言葉にならない兆候から異変を嗅ぎ取る。理屈より先に体が警告を出す。</div></div><div class="card"><div class="t">緊張下での集中力</div><div class="dd">危機の只中でこそ冴える。恐れを力に変え、核心へ最短で迫る。</div></div></div></section>
 <section class="sec reveal"><h2>あなたの陰</h2><div class="cards"><div class="card dark"><div class="t">気が休まらない</div><div class="dd">常に警戒を解けず、安全な場所でも緊張している。休息の下手さが消耗を生む。</div></div><div class="card dark"><div class="t">無謀に踏み込む危うさ</div><div class="dd">畏れているのに近づいてしまう。その一歩が、時に自分を危険に晒す。</div></div></div></section>
-<section class="sec reveal pain-sec">
-  <h2>あなたが抱える、現実の悩み</h2>
-  <ul class="pains"><li>気になると、確かめずにいられない</li><li>危険を感じ取りすぎて、気が休まらない</li><li>「警戒心が強い」と言われてしまう</li></ul>
-  <p class="pain-close">これは、あなたが神経質だからではありません。人が見逃す危険を察知してしまう——それが「闇切りの狩人」という感性なんです。あなたが気を抜けないのは、見えてしまうから。その鋭さは、いざという時、必ず誰かを守ります。</p>
-  <div class="rx-box">
-    <div class="rx-h">その一つひとつに、「処方」があります。</div>
-    <ul class="rx"><li>警戒心で消耗しない休め方</li><li>無謀に踏み込まない「畏れの羅針盤」</li><li>緊張を共有できる相棒の見つけ方</li></ul>
-    <div class="rx-note">——その中身は、『深淵の書』で明かされます。</div>
-  </div>
-</section>
 <section class="sec reveal compat-sec">
   <h2>深層相性マトリクス</h2>
   <p class="sec-lead">魂が響き合う相手と、欠けを補い合う相手。</p>
@@ -557,7 +550,6 @@ body{font-family:'Noto Serif JP','Noto Serif CJK JP',serif;
     <div class="final-specs">16タイプ詳説 ／ 256通りの相性辞典 ／ 覚醒の五段階 ／ 守護と障り ／ 深淵の暦 ── 約500ページ</div>
   </div>
   <a class="btn solid" href="https://noxnomah.booth.pm/items/8507375" target="_blank" rel="noopener">『深淵の書』で、すべてを知る</a>
-  <div class="final-note">あなたの本質の全文／処方箋のすべて／歴史上の同類／全タイプとの相性／10の心理テスト</div>
   <div class="line-cta">
     <div class="line-cta-label">── まずは無料で、続きを ──</div>
     <p class="line-cta-lead">いきなり読むのは迷う？　LINE登録で、<strong>闇切りの狩人</strong>の深層を3日間かけてお届けします。</p>
@@ -566,12 +558,17 @@ body{font-family:'Noto Serif JP','Noto Serif CJK JP',serif;
       <li>📖 <strong>深淵の書・試し読み</strong>── 「この力をひらいた先に叶える未来」の章を無料公開（翌日）</li>
     </ul>
     <a class="btn line-btn" href="#">LINEで続きを受け取る（無料）</a>
-    <p class="line-note">登録後すぐに、あなたのタイプ専用のメッセージが届きます。</p>
   </div>
   <div class="share">
     <div class="share-h">あなたの結果をシェア</div>
     <div class="share-quote">「当たってる…。私は【闇切りの狩人】でした。"考えすぎ"と言われた勘は、いつも正しかった。」</div>
     <div class="sns-btns">
+            <div class="share-img-wrap">
+        <a href="https://nomachiryo.github.io/shinen-project/site/sns/XLRF_wide.jpg" download="XLRF_wide.jpg" target="_blank">
+          <img src="https://nomachiryo.github.io/shinen-project/site/sns/XLRF_wide.jpg" alt="シェア用画像" class="share-img">
+        </a>
+        <p class="share-img-note">↑ 長押し（スマホ）またはクリックで画像を保存 → そのままXにシェア</p>
+      </div>
       <a class="sns-btn x-btn" href="https://twitter.com/intent/tweet?text=%E9%9C%8A%E8%83%BD%E5%8A%9B16%E3%82%BF%E3%82%A4%E3%83%97%E8%A8%BA%E6%96%AD%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F%F0%9F%94%AE%0A%E7%A7%81%E3%81%AF%E3%80%90%E9%97%87%E5%88%87%E3%82%8A%E3%81%AE%E7%8B%A9%E4%BA%BA%E3%80%91%E3%81%A7%E3%81%97%E3%81%9F%E2%9C%A6%0A%E3%80%8C%E5%BD%93%E3%81%9F%E3%81%A3%E3%81%A6%E3%82%8B%E2%80%A6%E3%80%82%E7%A7%81%E3%81%AF%E3%80%90%E9%97%87%E5%88%87%E3%82%8A%E3%81%AE%E7%8B%A9%E4%BA%BA%E3%80%91%E3%81%A7%E3%81%97%E3%81%9F%E3%80%82%22%E8%80%83%E3%81%88%E3%81%99%E3%81%8E%22%E3%81%A8%E8%A8%80%E3%82%8F%E3%80%8D%0A%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AF%EF%BC%9F%F0%9F%91%87%E7%84%A1%E6%96%99%E3%83%BB%E7%B4%843%E5%88%86%0A%23%E9%9C%8A%E8%83%BD%E5%8A%9B16%E3%82%BF%E3%82%A4%E3%83%97%E8%A8%BA%E6%96%AD&url=https%3A//nomachiryo.github.io/shinen-project/site/result_XLRF.html" onclick="window.open(this.href,'_blank','noopener,noreferrer');return false;" rel="noopener noreferrer">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         でシェア

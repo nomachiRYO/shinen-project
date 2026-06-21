@@ -463,6 +463,9 @@ body{font-family:'Noto Serif JP','Noto Serif CJK JP',serif;
 .sns-btns{display:flex;flex-direction:column;gap:12px;max-width:320px;margin:22px auto 0;}
 .sns-btn{display:flex;align-items:center;justify-content:center;gap:9px;padding:14px 20px;border-radius:28px;font-size:14px;font-weight:bold;text-decoration:none;letter-spacing:.04em;transition:opacity .18s;}
 .sns-btn:hover{opacity:.82;}
+.share-img-wrap{width:100%;margin-bottom:6px;}
+.share-img{width:100%;border-radius:12px;display:block;box-shadow:0 4px 20px rgba(0,0,0,.4);}
+.share-img-note{font-size:11px;color:var(--muted);text-align:center;margin-top:8px;margin-bottom:18px;letter-spacing:.04em;}
 .x-btn{background:#000;color:#fff;}
 .ig-btn{background:linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);color:#fff;}
 .line-btn2{background:#06c755;color:#fff;}
@@ -526,16 +529,6 @@ body{font-family:'Noto Serif JP','Noto Serif CJK JP',serif;
 <section class="sec reveal"><h2>霊的日常の観測ログ</h2><p class="sec-lead">あなたには、思い当たることばかりのはずです。</p><div class="logs"><div class="log"><div class="log-t">「夢と現実の境目が曖昧な朝」</div><div class="log-d">「これって夢だったか、現実だったか」と一瞬迷う。このタイプにとって夢は、もう一つの現実。</div></div><div class="log"><div class="log-t">「シンクロニシティに、もう驚かない」</div><div class="log-d">ふと思った人から連絡が来る。他の人なら「すごい」と驚くことを「またか」と感じている。</div></div><div class="log"><div class="log-t">「初対面の人から不思議と懐かれる」</div><div class="log-d">心を開きにくい人が、なぜか素直になる。相手の魂の領域に、スッと入っていける。</div></div></div></section>
 <section class="sec reveal"><h2>あなたの強み</h2><div class="cards"><div class="card"><div class="t">その場の本質を、全身で感じ取れる</div><div class="dd">言葉で説明される前に、あなたは場の空気そのものを感じ取っている。だから、嘘や違和感にもすぐ気づく。理屈を超えたこの感受性は、人にはない深さで世界を捉えています。</div></div><div class="card"><div class="t">人の心を、直接揺さぶれる</div><div class="dd">あなたの表現や存在には、理屈抜きで人の心に触れる力がある。あなたが本気で何かを表すとき、見ている人の魂がふるえる。それは、頭で作ったものには出せない力です。</div></div><div class="card"><div class="t">人の魂と、深くつながれる</div><div class="dd">あなたは相手の表面でなく、奥にあるものと向き合える人。だから人は、あなたの前ではつい本音をこぼしてしまう。深く通じ合える関係を結べるのは、あなたの才能です。</div></div></div></section>
 <section class="sec reveal"><h2>あなたの陰</h2><div class="cards"><div class="card dark"><div class="t">飲まれて、自分を見失う</div><div class="dd">感じやすいぶん、その場の感情や空気に飲み込まれてしまう。気づくと、自分が何を感じていたのか分からなくなっている。あなたには、自分に戻る時間が必要です。</div></div><div class="card dark"><div class="t">感じすぎて、消耗する</div><div class="dd">人の何倍も受け取ってしまうから、人混みや重い場にいるだけで疲れ果てる。それは弱さではなく、感受性が強すぎるゆえの、当然の反応なんです。</div></div></div></section>
-<section class="sec reveal pain-sec">
-  <h2>あなたが抱える、現実の悩み</h2>
-  <ul class="pains"><li>その場の空気に飲まれて、どっと消耗する</li><li>自分が何者なのか、分からなくなる</li><li>強く感じすぎて、疲れてしまう</li></ul>
-  <p class="pain-close">これは、あなたが情緒不安定だからではありません。世界と自分の境目が薄く、何でも宿してしまう——それが「神宿りの舞手」という感性なんです。あなたが飲まれやすいのは、それだけ深く世界とつながれるということ。その繊細さは、あなたにしかない宝物です。</p>
-  <div class="rx-box">
-    <div class="rx-h">その一つひとつに、「処方」があります。</div>
-    <ul class="rx"><li>飲まれずに宿す「錨の下ろし方」</li><li>自分を取り戻す境界の作り方</li><li>過敏な同調から回復する方法</li></ul>
-    <div class="rx-note">——その中身は、『深淵の書』で明かされます。</div>
-  </div>
-</section>
 <section class="sec reveal compat-sec">
   <h2>深層相性マトリクス</h2>
   <p class="sec-lead">魂が響き合う相手と、欠けを補い合う相手。</p>
@@ -557,7 +550,6 @@ body{font-family:'Noto Serif JP','Noto Serif CJK JP',serif;
     <div class="final-specs">16タイプ詳説 ／ 256通りの相性辞典 ／ 覚醒の五段階 ／ 守護と障り ／ 深淵の暦 ── 約500ページ</div>
   </div>
   <a class="btn solid" href="https://noxnomah.booth.pm/items/8507375" target="_blank" rel="noopener">『深淵の書』で、すべてを知る</a>
-  <div class="final-note">あなたの本質の全文／処方箋のすべて／歴史上の同類／全タイプとの相性／10の心理テスト</div>
   <div class="line-cta">
     <div class="line-cta-label">── まずは無料で、続きを ──</div>
     <p class="line-cta-lead">いきなり読むのは迷う？　LINE登録で、<strong>神宿りの舞手</strong>の深層を3日間かけてお届けします。</p>
@@ -566,12 +558,17 @@ body{font-family:'Noto Serif JP','Noto Serif CJK JP',serif;
       <li>📖 <strong>深淵の書・試し読み</strong>── 「この力をひらいた先に叶える未来」の章を無料公開（翌日）</li>
     </ul>
     <a class="btn line-btn" href="#">LINEで続きを受け取る（無料）</a>
-    <p class="line-note">登録後すぐに、あなたのタイプ専用のメッセージが届きます。</p>
   </div>
   <div class="share">
     <div class="share-h">あなたの結果をシェア</div>
     <div class="share-quote">「当たってる…。私は【神宿りの舞手】でした。"場の空気に飲まれて消耗する"のは応えすぎてたから。」</div>
     <div class="sns-btns">
+            <div class="share-img-wrap">
+        <a href="https://nomachiryo.github.io/shinen-project/site/sns/XORF_wide.jpg" download="XORF_wide.jpg" target="_blank">
+          <img src="https://nomachiryo.github.io/shinen-project/site/sns/XORF_wide.jpg" alt="シェア用画像" class="share-img">
+        </a>
+        <p class="share-img-note">↑ 長押し（スマホ）またはクリックで画像を保存 → そのままXにシェア</p>
+      </div>
       <a class="sns-btn x-btn" href="https://twitter.com/intent/tweet?text=%E9%9C%8A%E8%83%BD%E5%8A%9B16%E3%82%BF%E3%82%A4%E3%83%97%E8%A8%BA%E6%96%AD%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F%F0%9F%94%AE%0A%E7%A7%81%E3%81%AF%E3%80%90%E7%A5%9E%E5%AE%BF%E3%82%8A%E3%81%AE%E8%88%9E%E6%89%8B%E3%80%91%E3%81%A7%E3%81%97%E3%81%9F%E2%9C%A6%0A%E3%80%8C%E5%BD%93%E3%81%9F%E3%81%A3%E3%81%A6%E3%82%8B%E2%80%A6%E3%80%82%E7%A7%81%E3%81%AF%E3%80%90%E7%A5%9E%E5%AE%BF%E3%82%8A%E3%81%AE%E8%88%9E%E6%89%8B%E3%80%91%E3%81%A7%E3%81%97%E3%81%9F%E3%80%82%22%E5%A0%B4%E3%81%AE%E7%A9%BA%E6%B0%97%E3%81%AB%E9%A3%B2%E3%81%BE%E3%82%8C%E3%80%8D%0A%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AF%EF%BC%9F%F0%9F%91%87%E7%84%A1%E6%96%99%E3%83%BB%E7%B4%843%E5%88%86%0A%23%E9%9C%8A%E8%83%BD%E5%8A%9B16%E3%82%BF%E3%82%A4%E3%83%97%E8%A8%BA%E6%96%AD&url=https%3A//nomachiryo.github.io/shinen-project/site/result_XORF.html" onclick="window.open(this.href,'_blank','noopener,noreferrer');return false;" rel="noopener noreferrer">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         でシェア
