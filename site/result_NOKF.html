@@ -463,6 +463,9 @@ body{font-family:'Noto Serif JP','Noto Serif CJK JP',serif;
 .sns-btns{display:flex;flex-direction:column;gap:12px;max-width:320px;margin:22px auto 0;}
 .sns-btn{display:flex;align-items:center;justify-content:center;gap:9px;padding:14px 20px;border-radius:28px;font-size:14px;font-weight:bold;text-decoration:none;letter-spacing:.04em;transition:opacity .18s;}
 .sns-btn:hover{opacity:.82;}
+.share-img-wrap{width:100%;margin-bottom:6px;}
+.share-img{width:100%;border-radius:12px;display:block;box-shadow:0 4px 20px rgba(0,0,0,.4);}
+.share-img-note{font-size:11px;color:var(--muted);text-align:center;margin-top:8px;margin-bottom:18px;letter-spacing:.04em;}
 .x-btn{background:#000;color:#fff;}
 .ig-btn{background:linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);color:#fff;}
 .line-btn2{background:#06c755;color:#fff;}
@@ -526,16 +529,6 @@ body{font-family:'Noto Serif JP','Noto Serif CJK JP',serif;
 <section class="sec reveal"><h2>霊的日常の観測ログ</h2><p class="sec-lead">あなたには、思い当たることばかりのはずです。</p><div class="logs"><div class="log"><div class="log-t">「自分が誰だったか、ふと分からなくなる」</div><div class="log-d">「これって本当に私の人生?」鏡を見ても自分か確信が持てない時がある。魂が肉体に緩やかに繋がっている証。</div></div><div class="log"><div class="log-t">「夢が現実より鮮明な日がある」</div><div class="log-d">夢の方が色濃く、現実の出来事が遠く感じる。夢は別世界ではなく、もう一つの確かな現実。</div></div><div class="log"><div class="log-t">「人の感情と自分の感情の境が溶ける」</div><div class="log-d">話していて「あれは私の気持ちか、相手の気持ちか」が分からなくなる。共有しすぎて輪郭が揺らぐ。</div></div></div></section>
 <section class="sec reveal"><h2>あなたの強み</h2><div class="cards"><div class="card"><div class="t">誰より繊細な層を、感じられる</div><div class="dd">人が気づかないかすかなもの——空気の変化、言葉にならない気配、その場の記憶。あなたはそういう「いちばん繊細な層」に触れられる。それは、世界をより深く味わえるということです。</div></div><div class="card"><div class="t">壁を持たない、自由さ</div><div class="dd">普通の人は自分と外の世界の間に壁を持っています。あなたはその壁が薄いぶん、いろんなものと自然につながれる。夢も、過去も、人の気持ちも。それは不思議で、豊かな自由です。</div></div><div class="card"><div class="t">真実に、近い</div><div class="dd">境界が曖昧なあなたは、表面的なものの奥にある「本当のこと」に、自然と触れてしまう。みんなが見ないふりをするものが、あなたには視えている。それは特別なことなんです。</div></div></div></section>
 <section class="sec reveal"><h2>あなたの陰</h2><div class="cards"><div class="card dark"><div class="t">自分が、分からなくなる</div><div class="dd">人と深く関わると、自分と相手の境が溶けて、自分が誰だったか分からなくなる。気づくと、相手の色に染まっている。あなたには、自分を取り戻す時間が必要です。</div></div><div class="card dark"><div class="t">いろんなものを、受け取りやすい</div><div class="dd">境界が薄いぶん、よくないものも入り込みやすい体質です。原因の分からない不調や、感情が体に残る感じがあるなら、それは弱さではなく、開きすぎているサイン。守る術を知ることが大切です。</div></div></div></section>
-<section class="sec reveal pain-sec">
-  <h2>あなたが抱える、現実の悩み</h2>
-  <ul class="pains"><li>どこにいても、心の片隅が「ここじゃない」気がする</li><li>人と深く関わると、自分の輪郭が溶けてしまう</li><li>現実の手応えが薄くて、ふと不安になる</li></ul>
-  <p class="pain-close">これは、欠陥ではありません。二つの世界に同時に触れられる——それが「迷宮の亡霊」という稀な感性なんです。あなたがどこにも馴染めないと感じるのは、あなたがこちら側だけの存在じゃないから。その寄る辺なさは、誰にも見えないものを見られる力の、裏返しなのです。</p>
-  <div class="rx-box">
-    <div class="rx-h">その一つひとつに、「処方」があります。</div>
-    <ul class="rx"><li>自分の輪郭を保つ「小さな錨」の持ち方</li><li>溶けずに人と関わる距離の取り方</li><li>現実に足をつける地に足の習慣</li></ul>
-    <div class="rx-note">——その中身は、『深淵の書』で明かされます。</div>
-  </div>
-</section>
 <section class="sec reveal compat-sec">
   <h2>深層相性マトリクス</h2>
   <p class="sec-lead">魂が響き合う相手と、欠けを補い合う相手。</p>
@@ -557,7 +550,6 @@ body{font-family:'Noto Serif JP','Noto Serif CJK JP',serif;
     <div class="final-specs">16タイプ詳説 ／ 256通りの相性辞典 ／ 覚醒の五段階 ／ 守護と障り ／ 深淵の暦 ── 約500ページ</div>
   </div>
   <a class="btn solid" href="https://noxnomah.booth.pm/items/8507375" target="_blank" rel="noopener">『深淵の書』で、すべてを知る</a>
-  <div class="final-note">あなたの本質の全文／処方箋のすべて／歴史上の同類／全タイプとの相性／10の心理テスト</div>
   <div class="line-cta">
     <div class="line-cta-label">── まずは無料で、続きを ──</div>
     <p class="line-cta-lead">いきなり読むのは迷う？　LINE登録で、<strong>迷宮の亡霊</strong>の深層を3日間かけてお届けします。</p>
@@ -566,12 +558,17 @@ body{font-family:'Noto Serif JP','Noto Serif CJK JP',serif;
       <li>📖 <strong>深淵の書・試し読み</strong>── 「この力をひらいた先に叶える未来」の章を無料公開（翌日）</li>
     </ul>
     <a class="btn line-btn" href="#">LINEで続きを受け取る（無料）</a>
-    <p class="line-note">登録後すぐに、あなたのタイプ専用のメッセージが届きます。</p>
   </div>
   <div class="share">
     <div class="share-h">あなたの結果をシェア</div>
     <div class="share-quote">「当たりすぎ…。私は【迷宮の亡霊】でした。"どこにも馴染めない"んじゃなく"どの世界にも居場所がある"って救われた。」</div>
     <div class="sns-btns">
+            <div class="share-img-wrap">
+        <a href="https://nomachiryo.github.io/shinen-project/site/sns/NOKF_wide.jpg" download="NOKF_wide.jpg" target="_blank">
+          <img src="https://nomachiryo.github.io/shinen-project/site/sns/NOKF_wide.jpg" alt="シェア用画像" class="share-img">
+        </a>
+        <p class="share-img-note">↑ 長押し（スマホ）またはクリックで画像を保存 → そのままXにシェア</p>
+      </div>
       <a class="sns-btn x-btn" href="https://twitter.com/intent/tweet?text=%E9%9C%8A%E8%83%BD%E5%8A%9B16%E3%82%BF%E3%82%A4%E3%83%97%E8%A8%BA%E6%96%AD%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F%F0%9F%94%AE%0A%E7%A7%81%E3%81%AF%E3%80%90%E8%BF%B7%E5%AE%AE%E3%81%AE%E4%BA%A1%E9%9C%8A%E3%80%91%E3%81%A7%E3%81%97%E3%81%9F%E2%9C%A6%0A%E3%80%8C%E5%BD%93%E3%81%9F%E3%82%8A%E3%81%99%E3%81%8E%E2%80%A6%E3%80%82%E7%A7%81%E3%81%AF%E3%80%90%E8%BF%B7%E5%AE%AE%E3%81%AE%E4%BA%A1%E9%9C%8A%E3%80%91%E3%81%A7%E3%81%97%E3%81%9F%E3%80%82%22%E3%81%A9%E3%81%93%E3%81%AB%E3%82%82%E9%A6%B4%E6%9F%93%E3%82%81%E3%81%AA%E3%81%84%E3%80%8D%0A%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AF%EF%BC%9F%F0%9F%91%87%E7%84%A1%E6%96%99%E3%83%BB%E7%B4%843%E5%88%86%0A%23%E9%9C%8A%E8%83%BD%E5%8A%9B16%E3%82%BF%E3%82%A4%E3%83%97%E8%A8%BA%E6%96%AD&url=https%3A//nomachiryo.github.io/shinen-project/site/result_NOKF.html" onclick="window.open(this.href,'_blank','noopener,noreferrer');return false;" rel="noopener noreferrer">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         でシェア
