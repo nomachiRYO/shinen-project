@@ -537,7 +537,19 @@ body{font-family:'Noto Serif JP','Noto Serif CJK JP',serif;
 .toc{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:22px 0 6px;}
 .toc a{font-size:11.5px;letter-spacing:.06em;color:#c8b0e0;text-decoration:none;padding:8px 14px;border:1px solid rgba(125,91,166,.45);border-radius:18px;background:rgba(125,91,166,.1);transition:.25s;}
 .toc a:hover{border-color:#c9a84c;color:#f0e8fa;}
-</style><nav class="toc reveal"><a href="#you">あなたという人</a><a href="#strength">強みと陰</a><a href="#compat">相性</a><a href="#book">深淵の書</a><a href="#share">シェア</a><a href="#ugc">カード生成</a></nav>
+.ugc-pop{display:flex;align-items:center;gap:14px;margin:26px 0 0;padding:14px 16px;background:linear-gradient(135deg,rgba(201,168,76,.08),rgba(125,91,166,.12));border:1px solid rgba(201,168,76,.4);border-radius:14px;text-decoration:none;transition:.25s;}
+.ugc-pop:hover{border-color:#c9a84c;box-shadow:0 0 20px rgba(201,168,76,.15);}
+.ugc-pop-imgs{display:flex;align-items:center;gap:6px;flex-shrink:0;}
+.ugc-pop-imgs img{width:40px;aspect-ratio:2/3;object-fit:cover;object-position:center 28%;border-radius:6px;display:block;}
+.ugc-pop-arrow{color:#c9a84c;font-size:13px;}
+.ugc-pop-txt{font-size:12px;line-height:1.9;color:#a99cc0;}
+.ugc-pop-txt b{color:#e8d5a0;font-weight:normal;font-size:13px;}
+.cont-cue{text-align:center;font-size:11px;letter-spacing:.15em;color:#8d7ba6;margin:22px 0 0;}
+.cont-cue .dn{display:inline-block;animation:cuebob 2s ease-in-out infinite;}
+@keyframes cuebob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+</style><a class="ugc-pop reveal" href="#ugc"><span class="ugc-pop-imgs"><img src="ugc/before.jpg" alt="元の写真" loading="lazy"><span class="ugc-pop-arrow">→</span><img src="ugc/NORF.jpg" alt="カード風画像の例" loading="lazy"></span><span class="ugc-pop-txt"><b>あなたもカード風の画像を作ってみよう！</b><br>写真1枚でOK。プロンプトはページ下部に ↓</span></a>
+<div class="cont-cue reveal"><span class="dn">▼</span>　慈愛の依代の解説は、この下に続きます</div>
+<nav class="toc reveal"><a href="#you">あなたという人</a><a href="#strength">強みと陰</a><a href="#compat">相性</a><a href="#book">深淵の書</a><a href="#share">シェア</a><a href="#ugc">カード生成</a></nav>
 <section class="sec reveal" id="you"><h2>あなたという人</h2><div class="profile"><p>「あなたと話すと、なんだか安心する」——そう言われたことは、ありませんか。</p>
 <p>よく相談される。初対面の人にまで、深い悩みを打ち明けられる。あなたがいるだけで、その場の空気が少しやわらぐ。友達の変化に真っ先に気づくのは、いつもあなた。——本人たちは気づいていなくても、あなたに救われている人は、あなたが思っているよりずっと多いのです。</p>
 <p>それは、あなたの感受性が本物だからです。「優しすぎる」「気にしすぎ」と言われることがあるかもしれませんが、あなたは気にしているのではなく、本当に感じているんです。人混みで疲れるのも、誰かの変化にすぐ気づいてしまうのも、あなたがそれだけ深く世界と繋がっているから。</p>
